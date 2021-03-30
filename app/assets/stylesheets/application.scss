@@ -16,3 +16,6 @@
   position: relative;
   min-height: 100vh;
 }
+
+.alert-alert { @extend .alert-warning; }
+.alert-notice { @extend .alert-success; }
