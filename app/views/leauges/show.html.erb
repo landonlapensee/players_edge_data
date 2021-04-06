@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @leauge.name %></h3>
+
+<%= link_to 'Edit', edit_leauge_path(@leauge) %> |
+<%= link_to 'Back', leauges_path %> |
+<%= link_to 'Delete', leauge_path(@leauge), method: :delete, data: { confirm: 'Are you sure?' } %>
+
