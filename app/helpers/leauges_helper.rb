@@ -1,0 +1,2 @@
+module LeaugesHelper
+end

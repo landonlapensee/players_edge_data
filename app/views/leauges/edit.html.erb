@@ -1,0 +1,9 @@
+<h1>Edit Leauge</h1>
+
+<%= simple_form_for [ @leauge] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Edit Leauge", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Show', @leauge %> |
+<%= link_to 'Back', leauges_path %>
