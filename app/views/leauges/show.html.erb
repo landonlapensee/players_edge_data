@@ -1,8 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @leauge.name %></h3>
+<h2><%= @leauge.name %></h2>
 
+<h3>Teams</h3>
+<ol>
+  <% @teams.each do |team| %>
+    <li><%= team.name %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'Add Team', new_leauge_team_path(@leauge) %> |
 <%= link_to 'Edit', edit_leauge_path(@leauge) %> |
 <%= link_to 'Back', leauges_path %> |
 <%= link_to 'Delete', leauge_path(@leauge), method: :delete, data: { confirm: 'Are you sure?' } %>
 
+<h3>Projections</h3>
+<ol>
+  <% @projections.each do |projection| %>
+    <li><%= projection.player_name %></li>
+  <% end %>
+</ol>

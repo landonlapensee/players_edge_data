@@ -44,10 +44,8 @@ ActiveRecord::Schema.define(version: 2021_03_30_152028) do
     t.float "pim"
     t.float "fow"
     t.float "sog"
-    t.bigint "leauge_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["leauge_id"], name: "index_projections_on_leauge_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -73,6 +71,5 @@ ActiveRecord::Schema.define(version: 2021_03_30_152028) do
   add_foreign_key "leauges", "users"
   add_foreign_key "players", "projections"
   add_foreign_key "players", "teams"
-  add_foreign_key "projections", "leauges"
   add_foreign_key "teams", "leauges"
 end
