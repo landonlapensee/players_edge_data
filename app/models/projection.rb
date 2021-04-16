@@ -1,3 +1,5 @@
 class Projection < ApplicationRecord
-  has_many :players
+  belongs_to :leauge 
+  has_one :player
+  has_one :team, :through => :player
 end

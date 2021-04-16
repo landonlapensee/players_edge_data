@@ -12,7 +12,7 @@ class CreateProjections < ActiveRecord::Migration[6.1]
       t.float :pim
       t.float :fow
       t.float :sog
-      # t.references :leauge, null: false, foreign_key: true
+      t.references :leauge, null: false, foreign_key: true
 
       t.timestamps
     end

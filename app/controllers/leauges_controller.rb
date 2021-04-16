@@ -27,9 +27,9 @@ class LeaugesController < ApplicationController
   def create
     @leauge = Leauge.new(leauge_params)
     @leauge.user = current_user
-    @leauge.save
 
     if @leauge.save
+      @leauge.create_projections
       redirect_to leauges_path, notice: "Your leauge has been created"
     else
       render :new

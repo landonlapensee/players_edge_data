@@ -11,10 +11,12 @@
   <% @teams.each do |team| %>
     <li><%= team.name %> <%= link_to 'Stats', team %></li>
       
+      <ul>
       <% team.players.each do |player| %>
         <li><%= player.projection.player_name %></li>
       <% end %>
-
+      </ul>
+      
   <% end %>
 </ol>
 
