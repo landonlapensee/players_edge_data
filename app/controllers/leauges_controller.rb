@@ -9,7 +9,7 @@ class LeaugesController < ApplicationController
   # GET /leauges/1 or /leauges/1.json
   def show
     set_leauge
-    @projections = Projection.all
+    @projections = @leauge.projections
     @teams = Team.where(leauge_id: @leauge)
   end
 
@@ -51,7 +51,6 @@ class LeaugesController < ApplicationController
 
     redirect_to leauges_path, notice: "Your leauge has been deleted"
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_leauge

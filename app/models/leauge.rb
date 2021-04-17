@@ -22,8 +22,9 @@ class Leauge < ApplicationRecord
         pim: data[:pim],
         fow: data[:fow],
         sog: data[:sog],
-        leauge_id: self
+        leauge: self
       )
+
     end 
   end
 end

@@ -13,17 +13,10 @@
       
       <ul>
       <% team.players.each do |player| %>
-        <li><%= player.projection.player_name %></li>
+        <li><%= player.projection.player_name %><%= link_to 'Remove', player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
       </ul>
       
   <% end %>
 </ol>
 
-
-<h3>Projections</h3>
-<ol>
-  <% @projections.each do |projection| %>
-    <li><%= projection.player_name %> <%= link_to "Assign to Team", new_player_path(leauge: @leauge, projection: projection.id)  %></li>
-  <% end %>
-</ol>
