@@ -9,7 +9,7 @@ class LeaugesController < ApplicationController
   # GET /leauges/1 or /leauges/1.json
   def show
     set_leauge
-    @projections = @leauge.projections
+    @projections = Projection.where(leauge: @leauge).includes(:player)
     @teams = Team.where(leauge_id: @leauge)
   end
 

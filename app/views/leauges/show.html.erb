@@ -20,3 +20,11 @@
   <% end %>
 </ol>
 
+<h3>Projections</h3>
+<ol>
+  <% @projections.each do |projection| %>
+     <%# unless projection.player %>
+    <li><%= projection.player_name %><%= link_to "Assign to Team", new_player_path(leauge: @leauge, projection: projection.id)  %></li>
+    <%# end %>
+  <% end %>
+</ol>

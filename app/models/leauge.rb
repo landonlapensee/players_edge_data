@@ -2,8 +2,8 @@ class Leauge < ApplicationRecord
   require 'csv'
 
   belongs_to :user
-  has_many :teams
-  has_many :projections
+  has_many :teams, dependent: :destroy
+  has_many :projections, dependent: :destroy
   validates :name, uniqueness: true
   validates :name, presence: true
   

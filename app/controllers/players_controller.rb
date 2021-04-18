@@ -7,7 +7,9 @@ class PlayersController < ApplicationController
   
   def create
     @player = Player.new(player_params)
-
+    @teams = Team.where(leauge_id: params[:leauge])
+    @projection = Projection.find(@player.projection.id)
+    
     if @player.save
       redirect_to leauge_path(@player.team.leauge) 
     else 
