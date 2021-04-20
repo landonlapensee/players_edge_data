@@ -9,7 +9,7 @@
 <%= link_to 'Add Team', new_leauge_team_path(@leauge) %>
 <ol>
   <% @teams.each do |team| %>
-    <li><%= team.name %> <%= link_to 'Stats', team %></li>
+    <li><%= team.name %> <%= team.goals %> <%= link_to 'Stats', team %></li>
       
       <ul>
       <% team.players.each do |player| %>

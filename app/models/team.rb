@@ -5,4 +5,12 @@ class Team < ApplicationRecord
 
   validates :name, uniqueness: { scope: :leauge_id } 
   validates :name, presence: true
+
+  def goals
+    total = 0    
+    self.projections.each do |projection|
+      total += projection.goals
+    end 
+    return total
+  end 
 end
