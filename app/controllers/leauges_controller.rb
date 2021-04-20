@@ -11,6 +11,7 @@ class LeaugesController < ApplicationController
     set_leauge
     @projections = Projection.where(leauge: @leauge).includes(:player)
     @teams = Team.where(leauge_id: @leauge)
+    @sorted_teams = @leauge.sort_teams
   end
 
   # GET /leauges/new

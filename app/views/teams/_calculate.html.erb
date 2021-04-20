@@ -1,6 +1,9 @@
 <ol>
-  <% @teams.each do |team| %>
-    <li><%= team.name %> <%= team.goals %> <%= team.assists %> <%= link_to 'Stats', team %></li>
+
+  
+  <% @sorted_teams.each do |team, total| %>
+    
+    <li><%= team.name %> <%= team.goals %> <%= team.assists %> (<%= total %>) <%= link_to 'Stats', team %></li>
       
       <ul>
       <% team.players.each do |player| %>
