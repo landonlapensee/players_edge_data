@@ -8,23 +8,14 @@
 <h3>Teams</h3> 
 <%= link_to 'Add Team', new_leauge_team_path(@leauge) %>
 <ol>
-  <% @teams.each do |team| %>
-    <li><%= team.name %> <%= team.goals %> <%= link_to 'Stats', team %></li>
-      
-      <ul>
-      <% team.players.each do |player| %>
-        <li><%= player.projection.player_name %><%= link_to 'Remove', player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      <% end %>
-      </ul>
-      
-  <% end %>
+  <%= render 'teams/calculate' %>
 </ol>
 
 <h3>Projections</h3>
 <ol>
   <% @projections.each do |projection| %>
-     <%# unless projection.player %>
+     <% unless projection.player %>
     <li><%= projection.player_name %><%= link_to "Assign to Team", new_player_path(leauge: @leauge, projection: projection.id)  %></li>
-    <%# end %>
+    <% end %>
   <% end %>
 </ol>

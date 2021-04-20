@@ -13,4 +13,12 @@ class Team < ApplicationRecord
     end 
     return total
   end 
+
+  def assists
+    total = 0    
+    self.projections.each do |projection|
+      total += projection.assists
+    end 
+    return total
+  end 
 end

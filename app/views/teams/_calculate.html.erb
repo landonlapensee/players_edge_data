@@ -1,0 +1,12 @@
+<ol>
+  <% @teams.each do |team| %>
+    <li><%= team.name %> <%= team.goals %> <%= team.assists %> <%= link_to 'Stats', team %></li>
+      
+      <ul>
+      <% team.players.each do |player| %>
+        <li><%= player.projection.player_name %><%= link_to 'Remove', player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+      </ul>
+      
+  <% end %>
+</ol>
