@@ -33,7 +33,7 @@ class Leauge < ApplicationRecord
     #Get all teams in the leauge
     @array_of_totals = []
     @team_with_category_rank = {}
-    arrange_totals
+    sort_totals
     calculate_totals
     @team_with_category_rank.sort_by{|k,v| v}
   end 
@@ -62,4 +62,11 @@ class Leauge < ApplicationRecord
       end 
     end 
   end 
+
+  def category_ranking(x, value)
+    rank = 1
+    sorted_teams = teams.sort_by { |team| team.total(value) }.reverse
+    sorted_teams.each_with_index { |team, index| ( team === x ) ? ( rank += index ) : nil }        
+    return rank
+  end
 end

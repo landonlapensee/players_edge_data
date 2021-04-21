@@ -6,7 +6,7 @@
     <li>
       <%=  team.name %> 
       <% Leauge::CATEGORIES.each do |category| %>
-        <%= team.total(category) %>
+        <%= team.total(category) %> (<%= @leauge.category_ranking(team, category) %>)
       <% end %>
       (<%= total %>)
       <%= link_to 'Stats', team %>
