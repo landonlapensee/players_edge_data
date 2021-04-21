@@ -1,0 +1,22 @@
+<ol>
+
+  
+  <% @sorted_teams.each do |team, total| %>
+    
+    <li>
+      <%=  team.name %> 
+      <% Leauge::CATEGORIES.each do |category| %>
+        <%= team.total(category) %>
+      <% end %>
+      (<%= total %>)
+      <%= link_to 'Stats', team %>
+    </li>
+      
+    <ul>
+      <% team.players.each do |player| %>
+        <li><%= player.projection.player_name %><%= link_to 'Remove', player_path(player), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+    </ul>
+      
+  <% end %>
+</ol>

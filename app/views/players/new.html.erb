@@ -1,5 +1,6 @@
 <%= simple_form_for [ @player ] do |f| %>
-    <%= f.select :team_id, @teams.collect { |t| [ t.name, t.id ] } %>
+    <%= f.collection_select(:team_id, @teams, :id, :name) %>
+    <%#= f.select :team_id, @teams.collect { |t| [ t.name, t.id ] } %>
     <%= f.input :projection_id, :as => :hidden, :input_html => { :value => @projection.id } %>
     <%= f.submit "Assign Team", class: "btn btn-primary" %>
     <% end %>
