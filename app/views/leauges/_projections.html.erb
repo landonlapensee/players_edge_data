@@ -1,0 +1,67 @@
+<h3>Projections</h3>
+<%# <div class="table-responsive"> %>
+  <table id="dtDynamicVerticalScrollExample" class="table w-100 table-striped table-bordered table-condensed table-sm" cellspacing="0"
+    width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm">Name
+        </th>
+        <th class="th-sm">Goals
+        </th>
+        <th class="th-sm">Assits
+        </th>
+        <th class="th-sm">Hits
+        </th>
+        <th class="th-sm">Blocks
+        </th>
+        <th class="th-sm">PIM
+        </th>
+        <th class="th-sm">FOW
+        </th>
+        <th class="th-sm">SOG
+        </th>
+        <th class="th-sm">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @projections.each do |projection| %>
+      <% unless projection.player %>
+      <tr>
+        <td><%= projection.player_name %></td>
+        <td><%= projection.goals %></td>
+        <td><%= projection.assists %></td>
+        <td><%= projection.hits %></td>
+        <td><%= projection.blocks %></td>
+        <td><%= projection.pim %></td>
+        <td><%= projection.fow %></td>
+        <td><%= projection.sog %></td>
+        <td><%= link_to "Assign to Team", new_player_path(leauge: @leauge, projection: projection.id), :class => "btn btn-sm btn-primary" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th class="th-sm">Name
+        </th>
+        <th class="th-sm">Goals
+        </th>
+        <th class="th-sm">Assits
+        </th>
+        <th class="th-sm">Hits
+        </th>
+        <th class="th-sm">Blocks
+        </th>
+        <th class="th-sm">PIM
+        </th>
+        <th class="th-sm">FOW
+        </th>
+        <th class="th-sm">SOG
+        </th>
+        <th class="th-sm">
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+<%# </div> %>

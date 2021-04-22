@@ -8,7 +8,15 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
+import { scrollableTable } from "../custom/table";
+require("datatables.net")
+require('datatables.net-bs4')
+require("datatables.net-bs4/css/dataTables.bootstrap4.min.css")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('turbolinks:load', () => {
+  scrollableTable();
+});
